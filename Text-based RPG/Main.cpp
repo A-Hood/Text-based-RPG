@@ -5,6 +5,7 @@ std::string username;
 int age;
 int jobSelection;
 int clothesSelection;
+int weaponSelection;
 std::string jobType;
 std::string homeTown;
 std::string armourType;
@@ -161,9 +162,102 @@ void Introduction(std::string username, int age, std::string homeTown)
 		std::cin >> armourColour;
 	}
 
-	std::cout << "\n\n========\n\n== FINISHED CHARACTER DESCRIPTION ==\n\n" << username << " is a " << age << " years old " << jobType << " who is currently wearing their " << armourColour << " " << armourType << "!\n\n========\n\n=!= Are you ready to start? =!=";
-
 	// CLOTHES COLOUR SELECTION END
+
+
+	// WEAPON SELECTION
+
+	std::cout << "The weapon that " << username << " wields is a...";
+	std::cout << "\n\n== YOU CHOOSE! ==\n\n";
+	if (jobType == "blacksmith")
+	{
+		std::cout << "Since you're a blacksmith class, you can choose your weapon from this list:\n\n========\n\n#1: Hammer\n#2: Axe\n#3: Red-hot Metal Spear\n\n==========\n\nPlease type the number from the list to select what clothing type you want!: ";
+		std::cin >> weaponSelection;
+		
+		while (selectionValid == false)
+		{
+			if (weaponSelection == 1)
+			{
+				weaponSelect = "hammer";
+				break;
+			}
+			else if (weaponSelection == 2)
+			{
+				weaponSelect = "axe";
+				break;
+			}
+			else if (weaponSelection == 3)
+			{
+				weaponSelect = "red-hot-metal-spear";
+				break;
+			}
+			else if (weaponSelection > 3);
+			else if (weaponSelection < 1);
+			std::cout << "\n=!=!=!=\nInput error! Selection was not in the options!\nPlease type a number that is in the options above: ";
+			std::cin >> weaponSelection;
+		}
+	}
+	else if (jobType == "farmer")
+	{
+		std::cout << "Since you're a farmer class, you can choose your weapon from this list:\n\n========\n\n#1: Pitchfork\n#2: Shovel\n#3: Scythe\n\n==========\n\nPlease type the number from the list to select what clothing type you want!: ";
+		std::cin >> weaponSelection;
+
+		while (selectionValid == false)
+		{
+			if (weaponSelection == 1)
+			{
+				weaponSelect = "pitchfork";
+				break;
+			}
+			else if (weaponSelection == 2)
+			{
+				weaponSelect = "shovel";
+				break;
+			}
+			else if (weaponSelection == 3)
+			{
+				weaponSelect = "scythe";
+				break;
+			}
+			else if (weaponSelection > 3);
+			else if (weaponSelection < 1);
+			std::cout << "\n=!=!=!=\nInput error! Selection was not in the options!\nPlease type a number that is in the options above: ";
+			std::cin >> weaponSelection;
+		}
+	}
+	else if (jobType == "warrior")
+	{
+		std::cout << "Since you're a warrior class, you can choose your weapon from this list:\n\n========\n\n#1: Sword\n#2: Axe\n#3: Mace\n\n==========\n\nPlease type the number from the list to select what clothing type you want!: ";
+		std::cin >> weaponSelection;
+
+		while (selectionValid == false)
+		{
+			if (weaponSelection == 1)
+			{
+				weaponSelect = "sword";
+				break;
+			}
+			else if (weaponSelection == 2)
+			{
+				weaponSelect = "axe";
+				break;
+			}
+			else if (weaponSelection == 3)
+			{
+				weaponSelect = "mace";
+				break;
+			}
+			else if (weaponSelection > 3);
+			else if (weaponSelection < 1);
+			std::cout << "\n=!=!=!=\nInput error! Selection was not in the options!\nPlease type a number that is in the options above: ";
+			std::cin >> weaponSelection;
+		}
+	}
+
+	// WEAPON SELECTION END
+
+	std::cout << "\n\n========\n\n== FINISHED CHARACTER DESCRIPTION ==\n\n" << username << " is a " << age << " years old " << jobType << " who is currently wearing their " << armourColour << " " << armourType << " and wields a " << weaponSelect << "!\n\n========\n\n = != Are you ready to start ? = != ";
+
 }
 
 int main()
