@@ -49,7 +49,7 @@ void Introduction(std::string username, int age, std::string homeTown)
 		std::cin >> jobSelection;
 	}
 
-	std::cout << "\n========\n\nYou have selected " << jobType << "!\n\n" << username << "'s most recent job is being a " << jobType << "!" << std::endl;
+	std::cout << "\n========\nYou have selected " << jobType << "!\n========\n\n" << username << "'s most recent job is being a " << jobType << "!" << std::endl;
 
 	// JOB SELECTION END
 
@@ -138,13 +138,13 @@ void Introduction(std::string username, int age, std::string homeTown)
 		}
 	}
 
-	std::cout << "\n========\n\nYou have selected " << armourType << "!\n\n" << username << "'s currently wearing " << armourType << "!" << std::endl;
+	std::cout << "\n========\nYou have selected " << armourType << "!\n========\n\n" << username << "'s currently wearing " << armourType << "!" << std::endl;
 
 	// CLOTHES SELECTION END
 
 	// CLOTHES COLOUR SELECTION
 
-	std::cout << "The colour of " << username << "'s clothes are...";
+	std::cout << "\nThe colour of " << username << "'s clothes are...";
 	std::cout << "\n\n== YOU CHOOSE! ==\n\n";
 	if (jobType == "blacksmith")
 	{
@@ -162,18 +162,19 @@ void Introduction(std::string username, int age, std::string homeTown)
 		std::cin >> armourColour;
 	}
 
+	std::cout << "\n\n========\nColour selected is " << armourColour << "\n========" << std::endl;
 	// CLOTHES COLOUR SELECTION END
 
 
 	// WEAPON SELECTION
 
-	std::cout << "The weapon that " << username << " wields is a...";
+	std::cout << "\nThe weapon that " << username << " wields is a...";
 	std::cout << "\n\n== YOU CHOOSE! ==\n\n";
 	if (jobType == "blacksmith")
 	{
 		std::cout << "Since you're a blacksmith class, you can choose your weapon from this list:\n\n========\n\n#1: Hammer\n#2: Axe\n#3: Red-hot Metal Spear\n\n==========\n\nPlease type the number from the list to select what clothing type you want!: ";
 		std::cin >> weaponSelection;
-		
+
 		while (selectionValid == false)
 		{
 			if (weaponSelection == 1)
@@ -254,17 +255,19 @@ void Introduction(std::string username, int age, std::string homeTown)
 		}
 	}
 
+	std::cout << "\n========\nWeapon selected to wield is the " << weaponSelect << "!\n========" << std::endl;
+
 	// WEAPON SELECTION END
 
-	std::cout << "\n\n========\n\n== FINISHED CHARACTER DESCRIPTION ==\n\n" << username << " is a " << age << " years old " << jobType << " who is currently wearing their " << armourColour << " " << armourType << " and wields a " << weaponSelect << "!\n\n========\n\n = != Are you ready to start ? = != ";
+	std::cout << "\n\n========\n\n== FINISHED CHARACTER DESCRIPTION ==\n\n" << username << " is a " << age << " year old " << jobType << " who is currently wearing their " << armourColour << " " << armourType << " and wields a " << weaponSelect << "!\n\n========\n\n = != Are you ready to start ? = != ";
 
 }
 
 int main()
 {
 	// Gets username + age.
-	std::cout << "== WELCOME TO [insert name here] TEXT-BASED RPG! ==\n\n";
-	std::cout << "To start your journey, we require a few details to make the story more suited to you as a player!\n\nFirst of all, what is your name?: ";
+	std::cout << "                     =========================================================\n                     |  == WELCOME TO [insert name here] TEXT-BASED RPG! ==  |\n============================================================================================================\n\n";
+	std::cout << "To start your journey, we require a few details to make the story more suited to you as a player!\n\n============================================================================================================\n\nFirst of all, what is your name?: ";
 	std::cin >> username;
 	std::cout << "\nWhat is your age?: ";
 	std::cin >> age;
